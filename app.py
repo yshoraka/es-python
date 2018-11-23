@@ -13,8 +13,8 @@ def index():
 
     if q is not None:
         es.transport.connection_pool.connection.headers.update(HEADERS)
-        resp = es.search(index="products",doc_type="default",body={"query": {"match": {"name.keyword": q}}})
-        return render_template("index.html",q=q,response=resp)
+        resp = es.search(index="products",doc_type="default",body={"query": {"match": {"name": q}}})
+        return render_template("index1.html",q=q,response=resp)
 
     return render_template('index.html')
 

@@ -9,6 +9,10 @@
             <label for="q">Search here : </label><input type="text" name="q" id="q" value="{{q}}">
             <input type="submit" value="search">
 </form>
-
+<ol>
+    {% for resp in response.hits.hits %}
+    <li><a href="{{resp._source.url}}"> {{resp._source.name}}</a></li>
+    {% endfor %}
+</ol>
 </body>
 </html>
